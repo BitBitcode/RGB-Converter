@@ -149,6 +149,15 @@
   <ItemGroup>
     <ClCompile Include="RGB 转换工具.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RGB 转换工具.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\RGB-Converter.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
