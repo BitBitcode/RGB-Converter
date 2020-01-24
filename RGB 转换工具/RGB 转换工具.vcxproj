@@ -156,7 +156,7 @@
     <ResourceCompile Include="RGB 转换工具.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\RGB-Converter.ico" />
+    <Image Include="..\RGB-Convertor-icon-2.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
