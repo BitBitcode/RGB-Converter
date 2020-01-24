@@ -12,16 +12,29 @@ float C;
 float M;
 float Y;
 float K;
+//int HEX[6];
+//int i;	// 数组计数变量
+int HEX1;
+int HEX2;
+int HEX3;
+int H;
+int S;
+int V;
 
 
 //【函数声明部分】
 void Welcome(void);
 void Enter_RGB(void);
+void Enter_HEX(void);
+void Enter_CMYK(void);
+void Enter_HSV(void);
 
-void RGB_to_XXX(void);		//（1）
+void RGB_to_HEX(void);		//（1）
 void RGB_to_CMYK(void);		//（2）
 void RGB_to_HSV(void);		//（3）
-void XXX_to_RGB(void);		//（4）
+void HEX_to_RGB(void);		//（4）
+void CMYK_to_RGB(void);		//（5）
+void HSV_to_RGB(void);		//（6）
 
 float max_num(float a, float b, float c);
 float min_num(float a, float b, float c);
@@ -38,11 +51,11 @@ int main()
 	system("mode con cols=60 lines=50");		// 设置窗口大小（单位：行）
 	system("title RGB 转换工具（V1.0.0）");		// 设置标题
 	
-	Welcome();									// 【调用】欢迎界面
+	Welcome();									//【调用】欢迎界面
 	system("pause");
 
-Start:											// 菜单开始
-	for (; ; )
+Start:											//【标签】菜单开始
+	for (;;)
 	{
 		system("cls");	// 清屏
 		printf("\n     -------------------- 菜    单 -------------------- \n\n");
@@ -53,7 +66,7 @@ Start:											// 菜单开始
 		printf("       5、CMYK → RGB\t\t（CMYK值转RGB值）\n");
 		printf("       6、HSV → RGB \t\t（HSV值转RGB值）\n");
 		printf("\n");
-		printf("      0、退    出 \n");
+		printf("       0、退    出 \n");
 		printf("     --------------------------------------------------\n\n");
 
 		printf("输入对应数字以选择：\n");
@@ -64,8 +77,8 @@ Start:											// 菜单开始
 			system("cls");	// 清屏
 			printf("当前位置：RGB → #FFFFFF \n");
 			printf("------------------------------------------------------------\n\n");
-			Enter_RGB();	// 【调用】获取 RGB 值
-			RGB_to_XXX();	// 【调用】输出十六进制色值
+			Enter_RGB();	//【调用】获取 RGB 值
+			RGB_to_HEX();	//【调用】RGB 转换为 十六进制 的函数
 			system("pause");
 			break;
 
@@ -73,8 +86,8 @@ Start:											// 菜单开始
 			system("cls");	// 清屏
 			printf("当前位置：RGB → CMYK \n");
 			printf("------------------------------------------------------------\n\n");
-			Enter_RGB();	// 【调用】获取 RGB 值
-			RGB_to_CMYK();	// 【调用】 RGB 转换为 CMYK 的函数
+			Enter_RGB();	//【调用】获取 RGB 值
+			RGB_to_CMYK();	//【调用】RGB 转换为 CMYK 的函数
 			system("pause");
 			break;
 
@@ -82,8 +95,8 @@ Start:											// 菜单开始
 			system("cls");	// 清屏
 			printf("当前位置：RGB → HSV \n");
 			printf("------------------------------------------------------------\n\n");
-			Enter_RGB();	// 【调用】获取 RGB 值
-
+			Enter_RGB();	//【调用】获取 RGB 值
+			RGB_to_HSV();	//【调用】RGB 转换为 HSV 的函数
 			system("pause");
 			break;
 
@@ -91,8 +104,8 @@ Start:											// 菜单开始
 			system("cls");	// 清屏
 			printf("当前位置：#FFFFFF → RGB \n");
 			printf("------------------------------------------------------------\n\n");
-			Enter_RGB();	// 【调用】获取 RGB 值
-
+			Enter_HEX();	//【调用】获取 十六进制 值
+			HEX_to_RGB();	//【调用】十六进制 转换为 RGB 的函数
 			system("pause");
 			break;
 
@@ -100,8 +113,8 @@ Start:											// 菜单开始
 			system("cls");	// 清屏
 			printf("当前位置：CMYK → RGB \n");
 			printf("------------------------------------------------------------\n\n");
-			Enter_RGB();	// 【调用】获取 RGB 值
-			
+			Enter_CMYK();	//【调用】获取 CMYK 值
+			CMYK_to_RGB();	//【调用】CMYK 转换为 RGB 的函数
 			system("pause");
 			break;
 
@@ -109,8 +122,8 @@ Start:											// 菜单开始
 			system("cls");	// 清屏
 			printf("当前位置：HSV → RGB \n");
 			printf("------------------------------------------------------------\n\n");
-			Enter_RGB();	// 【调用】获取 RGB 值
-
+			Enter_HSV();	//【调用】获取 HSV 值
+			HSV_to_RGB();	//【调用】HSV 转换为 RGB 的函数
 			system("pause");
 			break;
 
@@ -123,7 +136,7 @@ Start:											// 菜单开始
 			goto RE;
 		}
 	}
-Exit:						// 菜单“退出”的确认部分
+Exit:						//【标签】菜单“退出”的确认部分
 	{
 		int info = MessageBox(NULL, L"\n确定要退出吗？", L"退出提示", MB_YESNO);
 		if (info == IDYES)
@@ -162,7 +175,7 @@ void Welcome(void)
 //【函数】获取用户输入的 RGB 值，并检测是否在 [0, 255] 区间内
 void Enter_RGB(void)
 {
-	printf("请按照提示输入待转换的颜色值，区间：[0, 255]：\n");
+	printf("请按照提示输入待转换的颜色值，区间：[0, 255]\n");
 	
 	// 获取 R 值
 	printf("R = ");
@@ -194,26 +207,63 @@ RE3:scanf_s("%d", &B);
 
 
 //【函数】获取用户输入的 十六进制 值，并检测是否在 [#000000, #FFFFFF] 区间内
-void Enter_RGB(void)
+void Enter_HEX(void)
 {
-	printf("请输入待转换的十六进制颜色值，区间：[#000000, #FFFFFF] ：\n");
-	// 可能需要用数组
-	printf("  #");
-RE4:scanf_s("%d", &R);
-
+	printf("请按示例中的格式输入待转换的十六进制颜色值，区间：[#000000, #FFFFFF]\n");
+	printf("示例：#AA,BB,FF\n\n");
+RE4:printf("  请输入：#");
+	scanf_s("%X,%X,%X", &HEX1, &HEX2, &HEX3);
 	
-	// 检查合法性
-	if (R < 0 || R > 255)
+
+	// 校验输入
+	if (HEX1 < 0 && HEX1 > 165)
 	{
-		printf("【错误】RGB 应在 0 ~ 255 之间！请重新输入\n");
+		printf("【错误】输入的值应在：#000000 ~ #FFFFFF 内，请重新输入");
 		goto RE4;
 	}
+	else
+	{
+		printf("【校验】已输入： #%X", HEX1);
+	}
+
+	if (HEX2 < 0 && HEX2 > 165)
+	{
+		printf("【错误】输入的值应在：#000000 ~ #FFFFFF 内，请重新输入");
+		goto RE4;
+	}
+	else
+	{
+		printf("【校验】已输入： #%X", HEX2);
+	}
+
+	if (HEX3 < 0 && HEX3 > 165)
+	{
+		printf("【错误】输入的值应在：#000000 ~ #FFFFFF 内，请重新输入");
+		goto RE4;
+	}
+	else
+	{
+		printf("【校验】已输入： #%X", HEX3);
+	}
+}
+
+
+//【函数】获取用户输入的 CMYK 值，并检测是否在 [0%, 100%] 区间内
+void Enter_CMYK(void)
+{
+
+}
+
+
+//【函数】获取用户输入的 HSV 值，并检测是否在 [ , ] 区间内
+void Enter_HSV(void)
+{
 
 }
 
 
 //【函数】（1）将 RGB 值转换为十六进制的色值
-void RGB_to_XXX(void)
+void RGB_to_HEX(void)
 {	
 	// 将 RGB 值以十六进制的形式输出
 	printf("\n  该颜色的十六进制值为：");
@@ -296,17 +346,25 @@ void RGB_to_HSV(void)
 }
 
 
-//【函数】（3）将 RGB 值转换为 HSV 值
-void RGB_to_HSV(void)
-{
-
-}
-
-
 //【函数】（4）将 十六进制 色值转换为 RGB 值
-void XXX_to_RGB(void)
+void HEX_to_RGB(void)
 {
+	int Rx=0;		// 十六进制 R 值
+	int Gx=0;		// 十六进制 G 值
+	int Bx=0;		// 十六进制 B 值
 
+	// 利用进位制原理将用户输入的一个6位十六进制数（数组）转化为三个2位的十六进制数（Rx、Gx、Bx）
+	//Rx = (HEX/16)HEX % 16;	//（前两位）
+	//Gx = HEX * 16 + HEX;	//（中间两位）
+	//Bx = HEX * 16 + HEX;	//（后两位）
+
+	// 输出结果
+	printf("\n  该颜色的 CMYK 值为：\n");
+	printf("  RGB = (%d, %d, %d)\n", Rx, Gx, Bx);
+	printf("\n  分行显示便于拷贝：\n");
+	printf("  R = %d\n", Rx);
+	printf("  G = %d\n", Gx);
+	printf("  B = %d\n", Bx);
 }
 
 
