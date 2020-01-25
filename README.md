@@ -1,7 +1,8 @@
 # 超级色值计算器
 
+
 ![编写语言](https://img.shields.io/badge/Language-C-E02080)
-![问题](https://img.shields.io/badge/Issue-0/0-FF0000)
+![问题](https://img.shields.io/badge/Issue-1/1-FF0000)
 ![版本](https://img.shields.io/badge/Version-1.0.0-0078D7)
 ![运行环境](https://img.shields.io/badge/Platform-Windows-0078D7)
 ![开发工具](https://img.shields.io/badge/IDE-Visual_Studio-9153CC)
@@ -16,9 +17,21 @@
 
 
 ## 更新日志
-  + V1.0.0 发  布
-    - 2020.1.23
-    - 初代版本正式发布
+  + V1.0.1 更新
+    - 时间：2020.1.25
+    - 加入了更换主题的功能
+
+  + V1.0.0 正式发布
+    - 时间：2020.1.25
+    - 六个功能全部完成
+    - 加入了“帮助与提示”和“关于”
+    - 尚有一个输入问题，已列在 `Issue` 中
+
+  + V1.0.0(Beta) 发  布
+    - 时间：2020.1.23
+    - 初代版本（预览版）正式发布
+    - 整体框架完成
+    - 完成了前两个功能
     - 后续仍将继续更新
 
 
@@ -28,20 +41,42 @@
   + 应用类型：控制台应用程序
   + 安装说明：无需安装，即点即用
   + 系统要求：
-    + CPU 1.6 GHz
-    + 内存：2 G
-    + Windows 7 或更高版本
+    - CPU：1.6 GHz 及以上
+    - 内存：2 G 及以上
+    - Windows 7 或更高版本
+    - x64 体系架构
 
 
 ## 更多信息
   + **开发计划**
-    + 第一阶段：构建简单的的控制台应用程序，菜单是输入交互模式；
-    + 第二阶段：考虑添加一定的复杂菜单与操作逻辑，增加美观性，并优化现有的功能；
-    + 第三阶段：真正意义上实现一个有界面的小软件（暂缓）；
+    - 第一阶段：构建简单的的控制台应用程序，菜单是输入交互模式；
+    - 第二阶段：考虑添加一定的复杂菜单与操作逻辑，增加美观性，并优化现有的功能；
+    - 第三阶段：真正意义上实现一个有界面的小软件（暂缓）；
 
   + **开发说明**
-    + 函数及其作用 
-    + 色彩模式转换原理
+    - 函数及其作用
+      ```
+      void Welcome(void);		        // 欢迎界面
+      void Enter_RGB(void);		    // 获取 RGB
+      void Enter_HEX(void);		    // 获取 HEX
+      void Enter_CMYK(void);		    // 获取 CMYK
+      void Enter_HSV(void);	    	// 获取 HSV
+      void RGB_to_HEX(void);		    //（1）
+      void RGB_to_CMYK(void);		    //（2）
+      void RGB_to_HSV(void);	    	//（3）
+      void HEX_to_RGB(void);		    //（4）
+      void CMYK_to_RGB(void);		    //（5）
+      void HSV_to_RGB(void);		    //（6）
+      void Help(void);		          // 帮助与提示
+      void About(void);	            // 关  于
+      float max_num(float a, float b, float c);	  // 最大值
+      float min_num(float a, float b, float c);	  // 最小值 
+      ```
+
+    - 色彩模式转换原理：资料均来源于互联网，如:
+      * [RapidTables](https://www.rapidtables.com/convert/color/index.html)
+      * [CSDN](https://www.csdn.net/) 论  坛
+      * [Baidu](https://www.baidu.com/) 百  度
 
 
 ## 版权信息
