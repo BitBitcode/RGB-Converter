@@ -47,13 +47,13 @@
 
 
 ## 更多信息
-  + ###　开发计划
-    - 第一阶段：构建简单的的控制台应用程序，菜单是输入交互模式；
-    - 第二阶段：考虑添加一定的复杂菜单与操作逻辑，增加美观性，并优化现有的功能；
-    - 第三阶段：真正意义上实现一个有界面的小软件（暂缓）；
+### 开发计划
+  + 第一阶段：构建简单的的控制台应用程序，菜单是输入交互模式；
+  + 第二阶段：考虑添加一定的复杂菜单与操作逻辑，增加美观性，并优化现有的功能；
+  + 第三阶段：真正意义上实现一个有界面的小软件（暂缓）；
 
-  + ###　开发说明
-    - **函数及其作用**
+### 开发说明
+  + **函数及其作用**
       ```
       void Welcome(void);		      // 欢迎界面
       void Enter_RGB(void);       // 获取 RGB 值
@@ -72,11 +72,11 @@
       float min_num(float a, float b, float c);	  // 获取最小值 
       ```
 
-    - **色彩模式转换原理**
+  + **色彩模式转换原理**
     <br>资料均来源于互联网，主要参考自以下网站：
-      * [RapidTables](https://www.rapidtables.com/convert/color/index.html)
-      * [CSDN](https://www.csdn.net/) 论  坛
-      * [Baidu](https://www.baidu.com/) 百  度
+    * [RapidTables](https://www.rapidtables.com/convert/color/index.html)
+    * [CSDN](https://www.csdn.net/) 论  坛
+    * [Baidu](https://www.baidu.com/) 百  度
 
 
 ## 版权信息
