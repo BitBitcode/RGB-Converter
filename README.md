@@ -3,7 +3,7 @@
 
 ![编写语言](https://img.shields.io/badge/Language-C-E02080)
 ![问题](https://img.shields.io/badge/Issue-1/1-FF0000)
-![版本](https://img.shields.io/badge/Version-1.0.0-0078D7)
+![版本](https://img.shields.io/badge/Version-1.0.2-0078D7)
 ![运行环境](https://img.shields.io/badge/Platform-Windows-0078D7)
 ![开发工具](https://img.shields.io/badge/IDE-Visual_Studio-9153CC)
 ![开源许可](https://img.shields.io/badge/License-MIT-45BF17)
@@ -22,13 +22,13 @@
     - 加入了更换主题的功能
     - 优化了部分代码
 
-  + V1.0.1 正式发布
+  + V1.0.1 正式版发布
   <br>`时间：2020.1.25`
     - 六种转换全部制作完成
     - 加入了“帮助与提示”和“关于”
     - 尚有一个输入问题，已列在 [`Issues`](https://github.com/BitBitcode/RGB-Converter/issues) 中
 
-  + V1.0.0(Beta) 发  布
+  + V1.0.0 预览版发布
   <br>`时间：2020.1.23`
     - 初步完成了整体框架与操作逻辑的编写
     - 完成了前两个转换的编写
