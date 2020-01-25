@@ -47,32 +47,33 @@
 
 
 ## 更多信息
-  + **开发计划**
+  + ###　开发计划
     - 第一阶段：构建简单的的控制台应用程序，菜单是输入交互模式；
     - 第二阶段：考虑添加一定的复杂菜单与操作逻辑，增加美观性，并优化现有的功能；
     - 第三阶段：真正意义上实现一个有界面的小软件（暂缓）；
 
-  + **开发说明**
-    - 函数及其作用
+  + ###　开发说明
+    - **函数及其作用**
       ```
       void Welcome(void);		      // 欢迎界面
-      void Enter_RGB(void);		    // 获取 RGB
-      void Enter_HEX(void);		    // 获取 HEX
-      void Enter_CMYK(void);		  // 获取 CMYK
-      void Enter_HSV(void);	    	// 获取 HSV
-      void RGB_to_HEX(void);		  //（1）
-      void RGB_to_CMYK(void);		  //（2）
-      void RGB_to_HSV(void);	    //（3）
-      void HEX_to_RGB(void);		  //（4）
-      void CMYK_to_RGB(void);		  //（5）
-      void HSV_to_RGB(void);		  //（6）
-      void Help(void);		        // 帮助与提示
-      void About(void);	          // 关  于
-      float max_num(float a, float b, float c);	  // 最大值
-      float min_num(float a, float b, float c);	  // 最小值 
+      void Enter_RGB(void);       // 获取 RGB 值
+      void Enter_HEX(void);       // 获取 十六进制颜色
+      void Enter_CMYK(void);      // 获取 CMYK 值
+      void Enter_HSV(void);       // 获取 HSV 值
+      void RGB_to_HEX(void);      //（1）将RGB转换为十六进制颜色
+      void RGB_to_CMYK(void);     //（2）将RGB转换为CMYK
+      void RGB_to_HSV(void);      //（3）将RGB转换为HSV
+      void HEX_to_RGB(void);      //（4）将十六进制颜色转换为RGB
+      void CMYK_to_RGB(void);     //（5）将CMYK转换为RGB
+      void HSV_to_RGB(void);      //（6）将HSV转换为RGB
+      void Help(void);            // 帮助与提示
+      void About(void);           // 关  于
+      float max_num(float a, float b, float c);	  // 获取最大值
+      float min_num(float a, float b, float c);	  // 获取最小值 
       ```
 
-    - 色彩模式转换原理：资料均来源于互联网，如:
+    - **色彩模式转换原理**
+    <br>资料均来源于互联网，主要参考自以下网站：
       * [RapidTables](https://www.rapidtables.com/convert/color/index.html)
       * [CSDN](https://www.csdn.net/) 论  坛
       * [Baidu](https://www.baidu.com/) 百  度
