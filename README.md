@@ -11,17 +11,17 @@
 
 ## 关  于
   + 复杂的颜色模式总是让人迷惑，繁琐的转换计算也时常消耗精力。为什么不让计算机来完成呢，你只专注于配色，这个也就项目就应运而生；
-  + 基于 `C语言` 构建的控制台应用程序，用来转换不同的颜色模式，支持RGB转换为十六进制、CMYK和HSV，以及十六进制、CMYK和HSV转换为RGB；
+  + 基于 *C语言* 构建的控制台应用程序，用来转换不同的颜色模式，支持RGB转换为十六进制、CMYK和HSV，以及十六进制、CMYK和HSV转换为RGB；
   + 应用仍处在开发阶段，将不定期更新；
   + 欢迎 [`Fork`](https://github.com/login?return_to=%2FBitBitcode%2FRGB-Converter) 与 [`Pull Request`](https://github.com/BitBitcode/RGB-Converter/pulls)，如有 BUG 还请在 [`Issues`](https://github.com/BitBitcode/RGB-Converter/issues) 中提出，谢谢！
 
 
 ## 更新日志
-  + V1.0.1 更新
+  + V1.0.2 更新
     - 时间：2020.1.25
     - 加入了更换主题的功能
 
-  + V1.0.0 正式发布
+  + V1.0.1 正式发布
     - 时间：2020.1.25
     - 六个功能全部完成
     - 加入了“帮助与提示”和“关于”
