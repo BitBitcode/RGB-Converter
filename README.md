@@ -55,19 +55,19 @@
   + **开发说明**
     - 函数及其作用
       ```
-      void Welcome(void);		        // 欢迎界面
+      void Welcome(void);		      // 欢迎界面
       void Enter_RGB(void);		    // 获取 RGB
       void Enter_HEX(void);		    // 获取 HEX
-      void Enter_CMYK(void);		    // 获取 CMYK
+      void Enter_CMYK(void);		  // 获取 CMYK
       void Enter_HSV(void);	    	// 获取 HSV
-      void RGB_to_HEX(void);		    //（1）
-      void RGB_to_CMYK(void);		    //（2）
-      void RGB_to_HSV(void);	    	//（3）
-      void HEX_to_RGB(void);		    //（4）
-      void CMYK_to_RGB(void);		    //（5）
-      void HSV_to_RGB(void);		    //（6）
-      void Help(void);		          // 帮助与提示
-      void About(void);	            // 关  于
+      void RGB_to_HEX(void);		  //（1）
+      void RGB_to_CMYK(void);		  //（2）
+      void RGB_to_HSV(void);	    //（3）
+      void HEX_to_RGB(void);		  //（4）
+      void CMYK_to_RGB(void);		  //（5）
+      void HSV_to_RGB(void);		  //（6）
+      void Help(void);		        // 帮助与提示
+      void About(void);	          // 关  于
       float max_num(float a, float b, float c);	  // 最大值
       float min_num(float a, float b, float c);	  // 最小值 
       ```
