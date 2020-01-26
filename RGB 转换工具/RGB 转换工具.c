@@ -432,7 +432,6 @@ void RGB_to_CMYK(void)
 	float R0;
 	float G0;
 	float B0;
-
 	float Rf;	// 浮点型 R
 	float Gf;	// 浮点型 G
 	float Bf;	// 浮点型 B
@@ -447,9 +446,23 @@ void RGB_to_CMYK(void)
 	G0 = Gf / 255;
 	B0 = Bf / 255;
 	K = (1 - max_num(R0, G0, B0));
-	C = (1 - R0 - K) / (1 - K);
-	M = (1 - G0 - K) / (1 - K);
-	Y = (1 - B0 - K) / (1 - K);
+	// 测试中发现 RGB=(0,0,0)时有问题，因为分母为0了
+	if ((1 - K) == 0)
+	{
+		C = 0;
+		M = 0;
+		Y = 0;
+	}
+	else if ((1 - K) > 0)
+	{
+		C = (1 - R0 - K) / (1 - K);
+		M = (1 - G0 - K) / (1 - K);
+		Y = (1 - B0 - K) / (1 - K);
+	}
+	else
+	{
+		printf("【Error：K】\n");
+	}
 	
 	// 转换为百分比形式（CMYK是百分比）
 	C = C * 100;
@@ -479,7 +492,6 @@ void RGB_to_HSV(void)
 	float C_max;
 	float C_min;
 	float C_delta;
-
 	float Rf;	// 浮点型 R
 	float Gf;	// 浮点型 G
 	float Bf;	// 浮点型 B
@@ -493,7 +505,6 @@ void RGB_to_HSV(void)
 	R0 = Rf / 255;
 	G0 = Gf / 255;
 	B0 = Bf / 255;
-
 	C_max = max_num(R0, G0, B0);
 	C_min = min_num(R0, G0, B0);
 	C_delta = C_max - C_min;
@@ -564,8 +575,7 @@ void HEX_to_RGB(void)
 	//int Rx=0;		// 十六进制 R 值
 	//int Gx=0;		// 十六进制 G 值
 	//int Bx=0;		// 十六进制 B 值
-
-	// 利用进位制原理将用户输入的一个6位十六进制数（数组）转化为三个2位的十六进制数（Rx、Gx、Bx）
+	//// 利用进位制原理将用户输入的一个6位十六进制数（数组）转化为三个2位的十六进制数（Rx、Gx、Bx）
 	//Rx = HEX[0] * 16 + HEX[1];	//（前两位）
 	//Gx = HEX[2] * 16 + HEX[3];	//（中间两位）
 	//Bx = HEX[4] * 16 + HEX[5];	//（后两位）
@@ -597,10 +607,15 @@ void CMYK_to_RGB(void)
 	Gf = 255 * (100 - M) * (100 - K) / 10000;
 	Bf = 255 * (100 - Y) * (100 - K) / 10000;
 
-	// 加 0.5 再转换为 int 有四舍五入到个位数的效果
-	R = (int)(R + 0.5);
-	G = (int)(G + 0.5);
-	B = (int)(B + 0.5);
+	//// 加 0.5 再转换为 int 有四舍五入到个位数的效果
+	//R = (int)(Rf + 0.5);
+	//G = (int)(Gf + 0.5);
+	//B = (int)(Bf + 0.5);
+
+	// 后来查到了math.h中有专门的取整函数 double round(double)
+	R = round(Rf);
+	G = round(Gf);
+	B = round(Bf);
 
 	printf("\n  该颜色的 RGB 值为：\n");
 	printf("  RGB = (%d, %d, %d)\n", R, G, B);
