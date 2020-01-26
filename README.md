@@ -55,7 +55,7 @@
 ### 开发说明
   + **函数及其作用**
       ```
-      void Welcome(void);		      // 欢迎界面
+      void Welcome(void);	    // 欢迎界面
       void Enter_RGB(void);       // 获取 RGB 值
       void Enter_HEX(void);       // 获取 十六进制颜色
       void Enter_CMYK(void);      // 获取 CMYK 值
