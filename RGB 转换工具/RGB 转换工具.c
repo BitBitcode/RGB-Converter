@@ -47,13 +47,12 @@ float min_num(float a, float b, float c);	//【声明】最小值
 //【主函数部分】
 int main()
 {
-	int m = 11;										// 菜单选择变量
-	char c[10];
-	int i = 0;
+	int m = 11;									// 菜单选择变量
+	int i = 0;									// 主题选择变量
 	printf("加载中 。。。 。。。\n");			// 应该看不到的，除非电脑太卡
 	system("mode con cols=60 lines=50");		// 设置窗口大小（单位：行）
 	system("color 3F");							// 设置窗口颜色和文字颜色
-	// color [背景色][前景色]
+	// "color [背景色][前景色]"
 	// 第一组：0-黑色，1-蓝色，2-绿色，3-湖蓝色，4-红色，5-紫色，6-黄色，7-白色，8-灰色，9-淡蓝色；
 	// 第二组：A-淡绿色，B-淡浅绿色，C-淡红色，D-淡紫色，E-淡黄色，F-亮白色；
 	
@@ -460,10 +459,13 @@ void RGB_to_CMYK(void)
 
 	// 输出结果（注意：“%”需要连续打两个才能输出）
 	printf("\n  该颜色的 CMYK 值为：\n");
-	printf("  C：%3.0f %% \n", C);		
-	printf("  M：%3.0f %% \n", M);
-	printf("  Y：%3.0f %% \n", Y);
-	printf("  K：%3.0f %% \n", K);
+	printf("  CMYK = (%f%%, %f%%, %f%%, %f%%)\n", C, M, Y, K);
+	printf("\n  分行显示便于拷贝：\n");
+	printf("\n  该颜色的 CMYK 值为：\n");
+	printf("  C：%3.0f%% \n", C);		
+	printf("  M：%3.0f%% \n", M);
+	printf("  Y：%3.0f%% \n", Y);
+	printf("  K：%3.0f%% \n", K);
 	printf("\n");
 }
 
@@ -545,15 +547,13 @@ void RGB_to_HSV(void)
 	V = V * 100;
 
 	// 输出结果（注意：“%”需要连续打两个才能输出）
-	printf("  该颜色的 HSV 值为：\n");
-	printf("  HSV = (%f°, %f%%, %f%%)\n", H, S, V);
-	printf("\n  分行显示便于拷贝：\n");
-	
-	// FEN HANG
 	printf("\n  该颜色的 HSV 值为：\n");
-	printf("  H：%3.0f ° \n", H);
-	printf("  S：%3.0f %% \n", S);
-	printf("  V：%3.0f %% \n", V);
+	printf("  HSV = (%f°, %f%% , %f%%)\n", H, S, V);
+	printf("\n  分行显示便于拷贝：\n");
+	printf("\n  该颜色的 HSV 值为：\n");
+	printf("  H：%3.0f° \n", H);
+	printf("  S：%3.0f%% \n", S);
+	printf("  V：%3.0f%% \n", V);
 	printf("\n");
 }
 
@@ -711,6 +711,7 @@ void Help(void)
 	printf("\n");
 	printf("【问题】转换结果有问题/不准确/有负数等。\n");
 	printf("【提示】软件经过作者一定的测试，力求准确无误，但是因为不可能将每个数值都一一测试，所以可能有部分尚未发现的BUG。如果你发现了问题，请告知作者，谢谢！（Email：smilewwc@qq.com）\n");
+	printf("\n");
 	printf("本项目已开源，如果你也是开发者，或者对此项目有兴趣，你也可以在 Github 上 Fork 此项目，提出建议或贡献代码。期待你的加入！GitHub地址：https://github.com/BitBitcode/RGB-Converter");
 	printf("\n");
 }
@@ -722,17 +723,18 @@ void About(void)
 	printf("  系统平台：Microsoft Windows\n");
 	printf("  体系架构：x64（尚未测试32位系统的兼容性）\n");
 	printf("  应用类型：控制台应用程序\n");
-	printf("  程序版本：V1.0.0\n");
+	printf("  程序版本：V1.1.2\n");
+	printf("  内部版本号：1.1.0.20200125_Beta\n");
 	printf("  安装说明：无需安装，即点即用\n");
 	printf("  系统要求：\n");
-	printf("    ·CPU 1.6 GHz\n");
-	printf("    ·内存：2 G\n");
+	printf("    ·CPU 1.6 GHz 及以上\n");
+	printf("    ·内存：2 G 及以上\n");
 	printf("    ·Windows 7 或更高版本\n");
 	printf("\n");
 	printf("  作者：BitBitcode\n");
 	printf("  邮箱：smilewwc@qq.com\n");
 	printf("  GitHub：https://github.com/BitBitcode/RGB-Converter \n\n");
-	printf("  PS：本项目已开源，如果你也是开发者，或者对此项目有兴趣，你也可以在 Github 上 Fork 此项目，提出建议或贡献代码。期待你的加入！\n");
+	printf("  P.S.：本项目已开源，如果你也是开发者，或者对此项目有兴趣，你也可以在 Github 上 Fork 此项目，提出建议或贡献代码。期待你的加入！\n");
 	printf("\n\n\n");
 }
 
