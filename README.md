@@ -3,7 +3,7 @@
 
 ![编写语言](https://img.shields.io/badge/Language-C-E02080)
 ![问题](https://img.shields.io/badge/Issue-1/1-FF0000)
-![版本](https://img.shields.io/badge/Version-1.1.0-0078D7)
+![版本](https://img.shields.io/badge/Version-1.1.1-0078D7)
 ![运行环境](https://img.shields.io/badge/Platform-Windows-0078D7)
 ![开发工具](https://img.shields.io/badge/IDE-Visual_Studio-9153CC)
 ![开源许可](https://img.shields.io/badge/License-MIT-45BF17)
@@ -19,9 +19,9 @@
 ## 更新日志
   + V1.1.1 质量更新
   <br>`2020.1.26`  `内部版本号：1.1.1.20200126_Beta`
-    - 向.exe文件中添加了版本号、版权信息、文件名等信息
-    - 修复了RGB转CMYK中，RGB = (0, 0, 0)  时输出错误的问题
-    - 修复了CMYK转RGB中，变量对应错误导致输出全部为 (0, 0, 0) 的问题
+    - 向 .exe 文件中添加了版本号、版权信息、文件名等信息
+    - 修复了 RGB 转 CMYK 中，RGB = (0, 0, 0)  时输出错误的问题
+    - 修复了 CMYK 转 RGB 中，变量对应错误导致输出全部为 (0, 0, 0) 的问题
     
   + V1.1.0 功能更新
   <br> `时间：2020.1.25`  `内部版本号：1.1.0.20200125_Beta`
