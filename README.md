@@ -3,7 +3,7 @@
 
 ![编写语言](https://img.shields.io/badge/Language-C-E02080)
 ![问题](https://img.shields.io/badge/Issue-1/1-FF0000)
-![版本](https://img.shields.io/badge/Version-1.1.1-0078D7)
+![版本](https://img.shields.io/badge/Version-1.1.2-0078D7)
 ![运行环境](https://img.shields.io/badge/Platform-Windows-0078D7)
 ![开发工具](https://img.shields.io/badge/IDE-Visual_Studio-9153CC)
 ![开源许可](https://img.shields.io/badge/License-MIT-45BF17)
@@ -17,6 +17,11 @@
 
 
 ## 更新日志
+   + V1.1.2 质量更新
+  <br>`2020.1.27`  `内部版本号：1.1.2.20200127_Beta`
+    - 解决了十六进制转RGB模式下输入时需要加入逗号的问题，提升用户体验
+    - 但尚无法校验用户是否输入了非十六进制数，并且如果输入了非十六进制数会导致程序卡死
+  
   + V1.1.1 质量更新
   <br>`2020.1.26`  `内部版本号：1.1.1.20200126_Beta`
     - 向 .exe 文件中添加了版本号、版权信息、文件名等信息
