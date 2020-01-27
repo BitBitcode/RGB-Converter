@@ -2,7 +2,7 @@
 
 
 ![编写语言](https://img.shields.io/badge/Language-C-E02080)
-![问题](https://img.shields.io/badge/Issue-1/1-FF0000)
+![问题](https://img.shields.io/badge/Issue-1/2-FF0000)
 ![版本](https://img.shields.io/badge/Version-1.1.2-0078D7)
 ![运行环境](https://img.shields.io/badge/Platform-Windows-0078D7)
 ![开发工具](https://img.shields.io/badge/IDE-Visual_Studio-9153CC)
