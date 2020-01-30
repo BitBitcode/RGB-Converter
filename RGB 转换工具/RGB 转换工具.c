@@ -156,7 +156,7 @@ Start:											//【标签】菜单开始
 			}
 			else if (i == 2)
 			{
-				system("color B7");
+				system("color BF");
 			}
 			else if (i == 3)
 			{
@@ -172,7 +172,7 @@ Start:											//【标签】菜单开始
 			}
 			else if (i == 6)
 			{
-				system("color F8");
+				system("color F9");
 			}
 			else if (i == 7)
 			{
