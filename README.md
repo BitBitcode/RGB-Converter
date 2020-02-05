@@ -91,9 +91,9 @@
     * [Baidu](https://www.baidu.com/) 百  度
     
     
-  + **关于作者**
-    + 个人网页：[BitBitcode的个人主页](https://bitbitcode.github.io/)，欢迎访问（＾_＾）
-    + 个人邮箱：smilewwc@qq.com
+### 关于作者
+  + 个人网页：[BitBitcode的个人主页](https://bitbitcode.github.io/)，欢迎访问（＾_＾）
+  + 个人邮箱：smilewwc@qq.com
 
 
 ## 版权信息
